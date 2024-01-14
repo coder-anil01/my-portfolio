@@ -1,0 +1,55 @@
+.about{
+    display: flex;
+    width: calc(100vw-5vw);
+    /* padding: 0 5vw; */
+    height: 100vh;
+    background-color: black;
+    z-index: 9 !important;
+}
+.about-left{
+    display: flex;
+    align-items: center;
+}
+.about-left-image{
+    width: 30vw;
+    z-index: 9;
+    padding: 0 0 0 5vw;
+}
+.about-right{
+    z-index: 9;
+    background-color: black;
+    padding: 0 5vw 0 20px;
+}
+.about-heading{
+    font-size: 30px;
+    font-weight: 900;
+    opacity: 0.8;
+    background-color: #303030;
+    padding: 10px;
+    text-align: center;
+}
+.about-title{
+    font-weight: 600;
+    margin-top: 20px;
+}
+.about-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.about-me{
+    margin-top: 50px;
+}
+.about-me div{
+    display: grid;
+    grid-template-columns: 150px auto;
+    margin: 20px 0;
+}
+.about-education{
+    margin-top: 50px;
+}
+.about-education p{
+    display: grid;
+    grid-template-columns: 150px 100px auto;
+    margin: 20px 0;
+}
