@@ -3,24 +3,21 @@
 }
 .skills-container{
     width: calc(100vw-5vw);
-    padding: 20px 5vw 0 5vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+    padding: 10px 5vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .skills-cards{
-    background-color: rgb(35, 35, 35);
+    background-color: #232323;
+    width: 21vw;
+    margin: 10px 0;
 }
 .skills h3{
     text-align: center;
     padding-bottom: 10px;
     border-bottom: 1px solid white;
 }
-.skills-heading{
-    text-align: center;
-    color: rgb(43, 43, 43);
-}
-
 .skills-show{
     background-color: #535252;
     padding: 10px;
@@ -48,4 +45,21 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+/* PAD */
+@media screen and (max-width: 850px) {
+    .skills{
+        min-height: 50vh;
+    }
+    .skills-cards{
+        width: 41vw;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 500px) {
+    .skills-cards{
+        width: 94vw;
+    }
 }

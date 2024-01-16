@@ -99,10 +99,20 @@
         border-radius: 10px;
     }
     .res-navbar-menu-cross-first{
-        transform: rotate(45deg);
+        animation: menufirst 0.5s forwards;
     }
     .res-navbar-menu-cross-sec{
-        transform: rotate(135deg);
+        animation: menusec 0.5s forwards;
+    }
+
+    @keyframes menufirst {
+        
+        0% { transform: rotate(0); }
+        100% { transform: rotate(-45deg); }
+    }
+    @keyframes menusec {
+        0% { transform: rotate(0); }
+        100% { transform: rotate(45deg); }
     }
 
     .res-navbar-item-box{
@@ -121,7 +131,7 @@
     .res-navbar-item{
         color: white;
         margin: 10px 0;
-        padding: 10px 0;
+        padding: 10px 100%;
         text-decoration: none;
         font-weight: 700;
         font-size: 20px;
@@ -131,5 +141,14 @@
     @keyframes slide-out {
         0% { transform: translateX(-100%); }
         100% { transform: translateX(0); }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .res-navbar{
+        padding: 0 20px;
+    }
+    .res-navbar-image{
+        width: 150px;
     }
 }

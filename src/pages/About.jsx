@@ -10,15 +10,16 @@ const About = () => {
 
   return (
     <div className='about'>
+    <div className='about-heading'>ABOUT ME</div>
+    <div className='about-container'>
       <div className="about-left">
         <img className='about-left-image' src={Aboutimage} alt="profile" />
       </div>
       <div className="about-right">
-        <div className='about-heading'>ABOUT ME</div>
         <div className='about-title'>Aspiring Full Stack Web Developer adept in front-end and back-end technologies. Eager to apply skills in HTML, CSS, JavaScript, Node.js, and MongoDB to create seamless and engaging web applications.</div>
           <Radio.Group defaultValue={abouttogal} buttonStyle="solid" className='about-button'>
-           <Radio.Button value="a" onMouseEnter={(e) => setAbouttogal("a")}>About Me</Radio.Button>
-           <Radio.Button value="b" onMouseEnter={(e) => setAbouttogal("b")}>Education</Radio.Button>
+           <Radio.Button value="a" onClick={(e) => setAbouttogal("a")}>About Me</Radio.Button>
+           <Radio.Button value="b" onClick={(e) => setAbouttogal("b")}>Education</Radio.Button>
           </Radio.Group>
           {abouttogal === "a" ? <>
             <div className='about-me'>
@@ -37,9 +38,8 @@ const About = () => {
             <p><strong>Graduation</strong> <div> BCA </div> William Carey University, Shillong</p>
           </div>
           </>}
-          
-          
       </div>
+    </div>
     </div>
   )
 }

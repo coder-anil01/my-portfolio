@@ -1,7 +1,6 @@
 .homepage{
     width: calc(100vw-5vw);
-    height: 100vh;
-    background-image: linear-gradient(120deg, black 43%, #161616 40%);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,4 +77,48 @@
     border-radius: 50%;
     z-index: 20;
     cursor: pointer;
+}
+
+/* PAD */
+@media screen and (max-width: 850px) {
+    .homepage-text-work{
+        font-size: 18px;
+    }
+    .homepage-icon{
+        margin: 0 5px;
+    }
+    .homepage-image{
+        right: 2vw;
+        width: 38vw;
+        min-width: 190px;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 500px) {
+    .homepage{
+        padding: 50px 5vw 0 5vw;
+        min-height: calc(100vh-50px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+     .homepage-left{}
+    .homepage-small-text{
+        margin-bottom: 10px;
+    }
+    .homepage-name{
+        margin-bottom: 10px;
+    }
+    .homepage-button-hire{
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: 120px;
+        height: 35px;
+    }
+    .homepage-image{
+        position: static;
+        width: 60vw;
+        margin: 0 auto;
+    }
 }

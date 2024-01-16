@@ -23,8 +23,6 @@ const Blogs = () => {
           <img className='blog-card-image' src={Servers} alt="" />
           <div className='blog-card-title' >What is Database...</div>
         </div>
-      </div>
-      <div className='blog-container'>
         <div className='blog-card'>
           <img className='blog-card-image' src={Servers} alt="" />
           <div className='blog-card-title' >What is Database...</div>
