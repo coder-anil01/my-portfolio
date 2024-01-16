@@ -1,12 +1,13 @@
-.blog{}
+.blog{
+    min-height: 90vh;
+    width: calc(100vw-5vw);
+}
 
 .blog-container{
-    width: calc(100vw-5vw);
     padding: 0 5vw 0 5vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
-    z-index: 9;
     margin-top: 30px;
 }
 .blog-card{

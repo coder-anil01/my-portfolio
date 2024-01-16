@@ -5,10 +5,14 @@
     left: 0;
     right: 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     height: 70px;
     padding: 0 70px;
     backdrop-filter: blur(10px);
+}
+.res-navbar{
+    display: none;
 }
 .navbar-image-card{
     display: flex;
@@ -27,15 +31,105 @@
     font-size: 18px;
     color: white;
 }
-/* .navbar-item-box a:hover{
-    color: #29999d !important;
-} */
+
 .navbar-item{
     font-weight: 600;
     cursor: pointer;
 }
 
-/* .active{
-    color: #29999d !important;
-    border-bottom: 1px solid #29999d;
-} */
+
+/* => PAD  */
+@media screen and (max-width: 850px) {
+    .navbar{
+        display: none;
+    }
+    .res-navbar{
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 0 70px;
+        backdrop-filter: blur(10px);
+    }
+    .res-navbar-image-card{
+        display: flex;
+        align-items: center;
+    }
+    .res-navbar-image{
+        width: 200px;
+    }
+    .res-navbar-menu{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        cursor: pointer;
+        
+    }
+    .res-navbar-menu span{
+        width: 40px;
+        height: 5px;
+        color: white;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .res-navbar-menu-cross{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .res-navbar-menu-cross-sec,
+    .res-navbar-menu-cross-first{
+        width: 40px;
+        height: 5px;
+        color: white;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .res-navbar-menu-cross-first{
+        transform: rotate(45deg);
+    }
+    .res-navbar-menu-cross-sec{
+        transform: rotate(135deg);
+    }
+
+    .res-navbar-item-box{
+        z-index: 999;
+        position: fixed;
+        top: 69px;
+        left: 0;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        backdrop-filter: blur(15px);
+        animation: slide-out 0.5s forwards;
+        padding: 20px 0;
+    }
+    .res-navbar-item{
+        color: white;
+        margin: 10px 0;
+        padding: 10px 0;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    @keyframes slide-out {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(0); }
+    }
+}

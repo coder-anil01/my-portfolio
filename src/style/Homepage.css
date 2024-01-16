@@ -22,6 +22,7 @@
     font-size: 20px;
     font-weight: 800;
     margin-bottom: 20px;
+    color: #5df95d;
 }
 .homepage-icons{
     display: flex;
@@ -57,11 +58,24 @@
     box-shadow: 0 0 15px 1px #f729d1;
 }
 .homepage-image{
-    /* position: fixed; */
+    position: fixed;
     right: 5vw;
     width: 30vw;
+    min-width: 350px;
     border-radius: 50%;
     box-shadow: 0 0 80px 4px #b9fcff;
     background-color: #b9fcff;
     z-index:  1;
+}
+.top-arrow{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 5px 5px 0 5px;
+    color: white;
+    font-size: 40px;
+    background-color: green;
+    border-radius: 50%;
+    z-index: 20;
+    cursor: pointer;
 }

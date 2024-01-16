@@ -1,5 +1,5 @@
 .skills{
-    height: 100vh;
+    min-height: 90vh;
 }
 .skills-container{
     width: calc(100vw-5vw);
@@ -7,11 +7,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
-    z-index: 9;
 }
 .skills-cards{
     background-color: rgb(35, 35, 35);
-    height: 90vh;
 }
 .skills h3{
     text-align: center;
