@@ -6,6 +6,7 @@ import { TfiWrite } from "react-icons/tfi";
 import Contactimg from '../images/contact.jpeg'
 import { Modal } from "antd";
 import Rightimage from '../images/right.png'
+import axios from 'axios'
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -14,13 +15,25 @@ const Contact = () => {
   const [description, setDescription] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    setIsModalOpen(true)
-    setTimeout(() => {
-      setIsModalOpen(false)
-    }, 3000)
+    try {
+      const {data} = await axios.post('https://coderanilblog.onrender.com/api/v1/contact/create', {name, phone, email, message:description});
+      setName("");
+      setEmail("");
+      setPhone("");
+      setDescription("");
+      setIsModalOpen(true)
+      setTimeout(() => {
+        setIsModalOpen(false)
+      }, 3000)
+    } catch (error) {
+      console.log(error)
+    }
   }
+
+  
+
   return (
     <>
     <div className='about-heading'>GET IN TOUCH</div>
@@ -36,6 +49,7 @@ const Contact = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder='Enter Your Name'
+              required
               />
           </div>
           <div className='contact-icon-input'><div className='contact-icon'><FaPhoneAlt/></div>
@@ -44,14 +58,16 @@ const Contact = () => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder='Enter Your Phone Number'
+              required
             />
           </div>
           <div className='contact-icon-input'><div className='contact-icon'><MdEmail/></div>
-            <input type="text"
+            <input type="email"
               className='contact-input'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder='Enter Your Email'
+              required
               />
           </div>
           <div className='contact-icon-textarea'><div className='contact-icon'><TfiWrite/></div>
@@ -60,6 +76,7 @@ const Contact = () => {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder='Type Your Message... '
+              required
               />
           </div>
           <button className='contact-page-submit homepage-button-hire ' type='submit'>SEND</button>
