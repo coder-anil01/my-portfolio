@@ -1,0 +1,40 @@
+.dashbord-blog-main{
+    width: 100%;
+    min-height: 100vh;
+}
+.dashbord-blog-container{
+    padding: 80px 5vw 20px 5vw;
+}
+
+
+.dashbord-blog-create-container{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dashbord-blog-input{
+    width: 70vw;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* SHOW */
+.dashbord-blog-show{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.dashbord-blog-card{
+    margin: 10px;
+    background-color: #3c3b3b;
+    padding: 20px 10px;
+    border-radius: 10px;
+}
+.dashbord-blog-image{
+    width: 100%;
+}
+.dashbord-blog-title{
+    padding-top: 10px;
+}
