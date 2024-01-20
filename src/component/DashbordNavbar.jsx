@@ -5,7 +5,7 @@ import Navlogo from "../images/Navlogo.png"
 const DashbordNavbar = () => {
   return (
     <div className='navbar'>
-      <div className='navbar-image-card'><img className='navbar-image' src={Navlogo} alt="Navlogo" /></div>
+      <NavLink to='/' className='navbar-image-card'><img className='navbar-image' src={Navlogo} alt="Navlogo" /></NavLink>
       <div className='navbar-item-box'>
         <NavLink to='/admin' className='navbar-item'>Messages</NavLink>
         <NavLink to='/admin/blog' className='navbar-item'>Blogs</NavLink>
