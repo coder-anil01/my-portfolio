@@ -13,9 +13,8 @@
     z-index: 9;
 }
 .about-container{
-    width: calc(100vw-5vw);
     min-height: 76vh;
-    padding:50px 5vw 20px 5vw;
+    padding: 50px 5vw 20px 5vw;
     margin: auto 0;
     display: flex;
     background-color: black;

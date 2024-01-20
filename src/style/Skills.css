@@ -2,7 +2,6 @@
     min-height: 90vh;
 }
 .skills-container{
-    width: calc(100vw-5vw);
     padding: 10px 5vw;
     display: flex;
     justify-content: space-between;

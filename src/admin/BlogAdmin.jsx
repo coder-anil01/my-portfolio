@@ -3,7 +3,9 @@ import DashbordNavbar from '../component/DashbordNavbar'
 import Blogimage from '../images/project.jpeg'
 import axios from 'axios'
 import '../style/BlogAdmin.css'
-
+import { MdDelete } from "react-icons/md";
+import { Link } from 'react-router-dom'
+import {Modal} from 'antd'
 
 const BlogAdmin = () => {
 
@@ -12,7 +14,29 @@ const BlogAdmin = () => {
   const [description, setDescription] = useState("")
   const [image, setImage] = useState("")
   const [videourl, setVideourl] = useState("")
-  const [pass, setPass] = useState("")
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [blogid, setBlogid] = useState("");
+  const [blogrtitle, setBlogtitle] = useState("");
+  const pass = "coder8987ani";
+
+  const handleOk = async () => {
+    try {
+      const {data} = await axios.post(`https://coderanilblog.onrender.com/api/v1/blog/delete/${blogid}`, {pass})
+      getBlog()
+      console.log(data)
+      if(data.success){
+        setIsModalOpen(false);
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+
 
   const getBlog = async() => {
     try {
@@ -31,7 +55,7 @@ const BlogAdmin = () => {
   const handleCreate = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://coderanilblog.onrender.com/api/v1/blog/create', {title, description, image, video_url: videourl, pass: "coder8987ani"})
+      await axios.post('https://coderanilblog.onrender.com/api/v1/blog/create', {title, description, image, video_url: videourl, pass})
       getBlog()
     } catch (error) {
       console.log(error)
@@ -73,13 +97,19 @@ const BlogAdmin = () => {
         <div className='dashbord-blog-show'>
           {blog?.map((b) => (
             <div key={b._id} className='dashbord-blog-card'>
-              <img className='dashbord-blog-image' src={Blogimage} alt="blog" />
-              <div className='dashbord-blog-title'>{b?.title}</div>
+              <Link to={`/blog/${b._id}`}><img className='dashbord-blog-image' src={Blogimage} alt="blog" /></Link>
+              <div className='dashbord-blog-buttom'>
+                <div className='dashbord-blog-title'>{b?.title.slice(0,20)}...</div>
+                <div onClick={() => (setIsModalOpen(true), setBlogid(b._id), setBlogtitle(b.title))} className='dashbord-blog-delete'><MdDelete/></div>
+              </div>
             </div>
           ))}
         </div>
       </div>
       </div>
+      <Modal title="Delete Blog" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <h3>{blogrtitle}</h3>
+      </Modal>
     </>
   )
 }

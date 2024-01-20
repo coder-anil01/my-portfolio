@@ -32,9 +32,19 @@
     padding: 20px 10px;
     border-radius: 10px;
 }
+.dashbord-blog-buttom{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.dashbord-blog-delete{
+    padding: 0 10px;
+    font-size: 22px;
+    cursor: pointer;
+    color: red;
+}
 .dashbord-blog-image{
     width: 100%;
 }
 .dashbord-blog-title{
-    padding-top: 10px;
 }
