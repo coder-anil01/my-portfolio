@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import DashbordNavbar from '../component/DashbordNavbar'
-import Blogimage from '../images/project.jpeg'
 import axios from 'axios'
 import '../style/BlogAdmin.css'
 import { MdDelete } from "react-icons/md";
@@ -12,12 +11,25 @@ const BlogAdmin = () => {
   const [blog, setBlog] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("")
-  const [image, setImage] = useState("")
+  const [image, setImage] = useState(null);
   const [videourl, setVideourl] = useState("")
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [blogid, setBlogid] = useState("");
   const [blogrtitle, setBlogtitle] = useState("");
-  const pass = "coder8987ani";
+  const [submitButton, setSubmitButton] = useState('Submit');
+  const pass = "coder8987anil";
+
+  const handleImageChange = (event) => {
+    const file = (event.target.files[0])
+    const render = new FileReader();
+    if(file){
+      render.readAsDataURL(file);
+      render.onload = () => {
+        console.log(render.result)
+        setImage(render.result)
+      }
+    }
+  };
 
   const handleOk = async () => {
     try {
@@ -41,6 +53,7 @@ const BlogAdmin = () => {
   const getBlog = async() => {
     try {
       const {data} = await axios.get('https://coderanilblog.onrender.com/api/v1/blog/get');
+      // const {data} = await axios.get('http://localhost:8000/api/v1/blog/get');
       setBlog(data.blogs)
       console.log(data)
     } catch (error) {
@@ -55,10 +68,20 @@ const BlogAdmin = () => {
   const handleCreate = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://coderanilblog.onrender.com/api/v1/blog/create', {title, description, image, video_url: videourl, pass})
+      setSubmitButton("Processing...")
+      // const {data} = await axios.post('http://localhost:8000/api/v1/blog/create', {title, description,image, video_url: videourl, pass})
+      const {data} = await axios.post('https://coderanilblog.onrender.com/api/v1/blog/create', {title, description,image, video_url: videourl, pass})
+      if(data.success){
+        setSubmitButton("Submit")
+        setTitle("");
+        setDescription("");
+        setImage("");
+        setVideourl('');
+      }
       getBlog()
     } catch (error) {
       console.log(error)
+      setSubmitButton("Submit")
     }
   }
   return (
@@ -73,12 +96,6 @@ const BlogAdmin = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder='Enter Heading' />
-              
-            <input type="text"
-              className='dashbord-blog-input'
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-              placeholder='Enter Image Url' />
 
             <input type="text"
               className='dashbord-blog-input'
@@ -86,21 +103,29 @@ const BlogAdmin = () => {
               onChange={(e) => setVideourl(e.target.value)}
               placeholder='Enter Video Url' />
 
-            <input type="text"
+            <textarea type="text"
               className='dashbord-blog-input'
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder='Enter Description' />
-            <button className='homepage-button-hire' type='submit'>Submit</button>
+
+              <input className='dashbord-blog-input' type="file" onChange={handleImageChange} accept="image/*" />
+
+              {image? <img className='dashbord-blog-preview-image' src={image} alt="blog pic" /> : 
+              <div className='dashbord-blog-preview-image'>Preview Image</div>}
+
+              
+
+            <button className='homepage-button-hire' type='submit'>{submitButton}</button>
           </form>
 {/* SHOW */}
         <div className='dashbord-blog-show'>
           {blog?.map((b) => (
             <div key={b._id} className='dashbord-blog-card'>
-              <Link to={`/blog/${b._id}`}><img className='dashbord-blog-image' src={Blogimage} alt="blog" /></Link>
+              <Link to={`/blog/${b._id}`}><img className='dashbord-blog-image' src={b.image} alt="blog" /></Link>
               <div className='dashbord-blog-buttom'>
                 <div className='dashbord-blog-title'>{b?.title.slice(0,20)}...</div>
-                <div onClick={() => (setIsModalOpen(true), setBlogid(b._id), setBlogtitle(b.title))} className='dashbord-blog-delete'><MdDelete/></div>
+                <div onClick={() => {setIsModalOpen(true); setBlogid(b._id); setBlogtitle(b.title)}} className='dashbord-blog-delete'><MdDelete/></div>
               </div>
             </div>
           ))}
