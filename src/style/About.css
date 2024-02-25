@@ -34,11 +34,29 @@
     font-weight: 600;
     margin-top: 20px;
 }
-.about-button{
+.about-button-container{
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: space-between;
+    width: 200px;
+    background-color: white;
+    color: green;
+    border-radius: 5px;
+    margin: 20px;
 }
+.about-button-container div{
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.about-button-card{
+    color: green;
+    text-decoration: none;
+}
+.about-active-button{
+    color: white;
+    background-color: green;
+}
+
 .about-me{
     margin-top: 50px;
 }

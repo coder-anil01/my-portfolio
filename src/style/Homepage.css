@@ -1,6 +1,5 @@
 .homepage{
     min-height: 100vh;
-    /* width: calc(100vw-5vw); */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,6 +27,7 @@
     margin-top: 20px;
 }
 .homepage-icon{
+    color: white;
     margin: 0 10px;
     font-size: 25px;
     box-shadow: 0 0 4px 2px black;
@@ -37,7 +37,7 @@
     transition: all 0.2s;
 }
 .homepage-icon:hover{
-    box-shadow: 0 0 5px 5px #ffa1ee !important;
+    box-shadow: 0 0 5px 5px green !important;
 }
 .homepage-button-hire{
     margin-top: 50px;
@@ -45,16 +45,11 @@
     width: 150px;
     height: 50px;
     font-size: 20px;
-    background-image: linear-gradient(130deg, #61f3fb , #f729d1);
+    background-color: green;
     color: white;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s;
-}
-.homepage-button-hire:hover{
-    background-image: linear-gradient(130deg, #f729d1, #61f3fb) !important;
     border-radius: 20px;
-    box-shadow: 0 0 15px 1px #f729d1;
 }
 .homepage-image{
     position: fixed;
@@ -62,8 +57,8 @@
     width: 30vw;
     min-width: 350px;
     border-radius: 50%;
-    box-shadow: 0 0 80px 4px #b9fcff;
-    background-color: #b9fcff;
+    box-shadow: 0 0 80px 4px #5d995d;
+    background-color: green;
     z-index:  1;
 }
 .top-arrow{

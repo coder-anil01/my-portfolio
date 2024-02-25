@@ -33,7 +33,8 @@ const BlogAdmin = () => {
 
   const handleOk = async () => {
     try {
-      const {data} = await axios.post(`https://coderanilblog.onrender.com/api/v1/blog/delete/${blogid}`, {pass})
+      // const {data} = await axios.post(`https://coderanilblog.onrender.com/api/v1/blog/delete/${blogid}`, {pass})
+      const {data} = await axios.post(`http://localhost:8000/api/v1/blog/delete/${blogid}`, {pass})
       getBlog()
       console.log(data)
       if(data.success){
@@ -52,8 +53,8 @@ const BlogAdmin = () => {
 
   const getBlog = async() => {
     try {
-      const {data} = await axios.get('https://coderanilblog.onrender.com/api/v1/blog/get');
-      // const {data} = await axios.get('http://localhost:8000/api/v1/blog/get');
+      // const {data} = await axios.get('https://coderanilblog.onrender.com/api/v1/blog/get');
+      const {data} = await axios.get('http://localhost:8000/api/v1/blog/get');
       setBlog(data.blogs)
       console.log(data)
     } catch (error) {
@@ -69,8 +70,8 @@ const BlogAdmin = () => {
     e.preventDefault();
     try {
       setSubmitButton("Processing...")
-      // const {data} = await axios.post('http://localhost:8000/api/v1/blog/create', {title, description,image, video_url: videourl, pass})
-      const {data} = await axios.post('https://coderanilblog.onrender.com/api/v1/blog/create', {title, description,image, video_url: videourl, pass})
+      const {data} = await axios.post('http://localhost:8000/api/v1/blog/create', {title, description,image, video_url: videourl, pass})
+      // const {data} = await axios.post('https://coderanilblog.onrender.com/api/v1/blog/create', {title, description,image, video_url: videourl, pass})
       if(data.success){
         setSubmitButton("Submit")
         setTitle("");

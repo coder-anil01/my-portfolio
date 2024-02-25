@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import '../style/About.css'
 import Aboutimage from '../images/anil ppp.png'
-import { Radio } from 'antd';
-
 
 const About = () => {
 
@@ -17,10 +15,11 @@ const About = () => {
       </div>
       <div className="about-right">
         <div className='about-title'>Aspiring Full Stack Web Developer adept in front-end and back-end technologies. Eager to apply skills in HTML, CSS, JavaScript, Node.js, and MongoDB to create seamless and engaging web applications.</div>
-          <Radio.Group defaultValue={abouttogal} buttonStyle="solid" className='about-button'>
-           <Radio.Button value="a" onClick={(e) => setAbouttogal("a")}>About Me</Radio.Button>
-           <Radio.Button value="b" onClick={(e) => setAbouttogal("b")}>Education</Radio.Button>
-          </Radio.Group>
+
+          <div className="about-button-container">
+            <div className={abouttogal === 'a' ? 'about-active-button' : 'about-button-card'} onClick={()=> setAbouttogal('a')}>About Me</div>
+            <div className={abouttogal === 'b' ? 'about-active-button' : 'about-button-card'} onClick={()=> setAbouttogal('b')}>Education</div>
+          </div>
           {abouttogal === "a" ? <>
             <div className='about-me'>
             <div><strong>Name:- </strong>Anil Kumar</div>

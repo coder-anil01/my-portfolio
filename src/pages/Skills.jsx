@@ -68,20 +68,13 @@ const Skills = () => {
             <div className='skils-show-title'><div>MONGODB</div><div>90%</div></div>
             <Progress className='skill-proccess-circle' type="circle" percent={90} strokeColor={twoColors} />
         </div>
-        <div className='skills-show-circle'>
-            <div className='skils-show-title'><div>MYSQL</div><div>50%</div></div>
-            <Progress className='skill-proccess-circle' type="circle" percent={50} strokeColor={twoColors} />
-        </div>
+
       </div>
       <div className='skills-cards'>
         <h3>Language</h3>
         <div className='skills-show-circle'>
             <div className='skils-show-title'><div>JAVA</div><div>93%</div></div>
             <Progress className='skill-proccess-circle' type="dashboard" percent={93} strokeColor={twoColors} />
-        </div>
-        <div className='skills-show-circle'>
-            <div className='skils-show-title'><div>PYTHON</div><div>90%</div></div>
-            <Progress className='skill-proccess-circle' type="dashboard" percent={90} strokeColor={twoColors} />
         </div>
       </div>
     </div>
