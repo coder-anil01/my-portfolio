@@ -7,6 +7,8 @@ import Services from '../pages/Services';
 import Blogs from '../pages/Blogs';
 import Contact from '../pages/Contact';
 import Skills from '../pages/Skills';
+import { IoMenu } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
 
@@ -29,31 +31,37 @@ const Navbar = () => {
     return (
     <>
     <div className='navbar'>
-      <div className='navbar-image-card'><img className='navbar-image' src={Navlogo} alt="Navlogo" /></div>
+    <div className="navbar-container">
+      <img className='navbar-image' src={Navlogo} alt="Navlogo" />
       <div className='navbar-item-box'>
-        <NavLink onClick={() => scrollHandler(home)} className='navbar-item'>Home</NavLink>
-        <NavLink onClick={() => scrollHandler(about)} className='navbar-item'>About</NavLink>
-        <NavLink onClick={() => scrollHandler(skills)} className='navbar-item'>Skills</NavLink>
-        <NavLink onClick={() => scrollHandler(services)} className='navbar-item'>Service</NavLink>
-        <NavLink onClick={() => scrollHandler(blogs)} className='navbar-item'>Blogs</NavLink>
-        <NavLink onClick={() => scrollHandler(contact)} className='navbar-item'>Contacts</NavLink>
+        <NavLink onClick={() => scrollHandler(home)} >Home</NavLink>
+        <NavLink onClick={() => scrollHandler(about)} >About</NavLink>
+        <NavLink onClick={() => scrollHandler(skills)} >Skills</NavLink>
+        <NavLink onClick={() => scrollHandler(services)} >Service</NavLink>
+        <NavLink onClick={() => scrollHandler(blogs)} >Blogs</NavLink>
+        <NavLink onClick={() => scrollHandler(contact)} >Contacts</NavLink>
+      </div>
+      <div className="navbar-menu">
+      {menuopen ?
+      <div onClick={() => setMenuopen(false)} className='res-navbar-menu-cross'><IoClose/></div> :
+      <div onClick={() => setMenuopen(true)} className='res-navbar-menu'><IoMenu/></div>}
       </div>
     </div>
-    <div className='res-navbar'>
-      <div className='res-navbar-image-card'><img className='res-navbar-image' src={Navlogo} alt="Navlogo" /></div>
-      {menuopen ? <>
-      <div onClick={() => setMenuopen(false)} className='res-navbar-menu-cross'>
-        <span className='res-navbar-menu-cross-first'></span>
-        <span className='res-navbar-menu-cross-sec'></span>
-      </div></> : <>
-      <><div onClick={() => setMenuopen(true)} className='res-navbar-menu'>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div></> </>}
     </div>
 
     <div>
+    </div>
+    {menuopen &&
+      <div className='res-navbar-item-box'>
+        <NavLink onClick={() => scrollHandler(home)} >Home</NavLink>
+        <NavLink onClick={() => scrollHandler(about)} >About</NavLink>
+        <NavLink onClick={() => scrollHandler(skills)} >Skills</NavLink>
+        <NavLink onClick={() => scrollHandler(services)} >Service</NavLink>
+        <NavLink onClick={() => scrollHandler(blogs)} >Blogs</NavLink>
+        <NavLink onClick={() => scrollHandler(contact)} >Contacts</NavLink>
+      </div>}
+
+      <div>
       <div ref={home}><Homepage /></div>
       <div ref={about}><About /></div>
       <div ref={skills}><Skills /></div>
@@ -61,18 +69,6 @@ const Navbar = () => {
       <div ref={blogs}><Blogs /></div>
       <div ref={contact}><Contact /></div>
     </div>
-
-    <div>
-    </div>
-    {menuopen ? <>
-      <div className='res-navbar-item-box'>
-        <NavLink className='res-navbar-item' onClick={() => scrollHandler(home)} >Home</NavLink>
-        <NavLink className='res-navbar-item' onClick={() => scrollHandler(about)} >About</NavLink>
-        <NavLink className='res-navbar-item' onClick={() => scrollHandler(skills)} >Skills</NavLink>
-        <NavLink className='res-navbar-item' onClick={() => scrollHandler(services)} >Service</NavLink>
-        <NavLink className='res-navbar-item' onClick={() => scrollHandler(blogs)} >Blogs</NavLink>
-        <NavLink className='res-navbar-item' onClick={() => scrollHandler(contact)} >Contacts</NavLink>
-      </div></> : "" }
     
     </>
   )

@@ -4,7 +4,7 @@ const DeliveryPolicy = () => {
   return (
     <div className='policy'>
       <div className="policy-container">
-        <h1 className="policy-heading">Terms And Conditions</h1>
+        <h1 className="policy-heading">Delivery Policy</h1>
 
         <div className="policy-title">Shipping Costs</div>
         <li className="policy-p">Shipping costs are calculated based on the weight of the package, shipping method selected, and destination. Additional charges such as taxes and customs duties may apply for international orders.</li>

@@ -1,154 +1,81 @@
+
 .navbar{
-    z-index: 999;
-    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(15px);
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
+    z-index: 100;
+    background-color: #00000081;
+}
+.navbar-container{
+    padding: 5px 5vw;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 70px;
-    padding: 0 70px;
-    backdrop-filter: blur(10px);
-}
-.res-navbar{
-    display: none;
-}
-.navbar-image-card{
-    display: flex;
     align-items: center;
 }
 .navbar-image{
     width: 200px;
 }
 .navbar-item-box{
-    display: flex;
-    align-items: center;
 }
 .navbar-item-box a{
-    margin: 0 15px;
     text-decoration: none;
-    font-size: 18px;
     color: white;
+    padding: 20px;
 }
 
-.navbar-item{
-    font-weight: 600;
+.navbar-menu{
+    display: none;
+}
+.res-navbar-menu-cross{}
+.res-navbar-menu{}
+
+.res-navbar-item-box{}
+.res-navbar-item-box a{}
+
+
+@media screen and (max-width: 800px) {
+.navbar-item-box{
+    display: none;
+}
+.navbar-menu{
+    display: flex;
+}
+.res-navbar-menu-cross,
+.res-navbar-menu{
+    font-size: 40px;
     cursor: pointer;
 }
-
-
-/* => PAD  */
-@media screen and (max-width: 850px) {
-    .navbar{
-        display: none;
-    }
-    .res-navbar{
-        z-index: 999;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 70px;
-        padding: 0 70px;
-        backdrop-filter: blur(10px);
-    }
-    .res-navbar-image-card{
-        display: flex;
-        align-items: center;
-    }
-    .res-navbar-image{
-        width: 200px;
-    }
-    .res-navbar-menu{
-        width: 40px;
-        height: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        cursor: pointer;
-        
-    }
-    .res-navbar-menu span{
-        width: 40px;
-        height: 5px;
-        color: white;
-        background-color: white;
-        border-radius: 10px;
-    }
-
-    .res-navbar-menu-cross{
-        width: 40px;
-        height: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-    .res-navbar-menu-cross-sec,
-    .res-navbar-menu-cross-first{
-        width: 40px;
-        height: 5px;
-        color: white;
-        background-color: white;
-        border-radius: 10px;
-    }
-    .res-navbar-menu-cross-first{
-        animation: menufirst 0.5s forwards;
-    }
-    .res-navbar-menu-cross-sec{
-        animation: menusec 0.5s forwards;
-    }
-
-    @keyframes menufirst {
-        
-        0% { transform: rotate(0); }
-        100% { transform: rotate(-45deg); }
-    }
-    @keyframes menusec {
-        0% { transform: rotate(0); }
-        100% { transform: rotate(45deg); }
-    }
-
-    .res-navbar-item-box{
-        z-index: 999;
-        position: fixed;
-        top: 69px;
-        left: 0;
-        width: 70vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        backdrop-filter: blur(15px);
-        animation: slide-out 0.5s forwards;
-        padding: 20px 0;
-    }
-    .res-navbar-item{
-        color: white;
-        margin: 10px 0;
-        padding: 10px 100%;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 20px;
-        cursor: pointer;
-    }
-
-    @keyframes slide-out {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(0); }
-    }
+.res-navbar-item-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    width: 80vw;
+    max-width: 350px;
+    background-color: #00000081;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+    align-items: center;
+    padding-top: 50px;
+    animation: slide-out 0.3s ease;
 }
-
-@media screen and (max-width: 850px) {
-    .res-navbar{
-        padding: 0 20px;
-    }
-    .res-navbar-image{
+.res-navbar-item-box a{
+    text-decoration: none;
+    color: white;
+    padding-block: 10px;
+    margin-block: 5px;
+}
+@keyframes slide-out {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+}
+/* MOBILE */
+@media screen and (max-width: 800px) {
+    .navbar-image{
         width: 150px;
     }
 }

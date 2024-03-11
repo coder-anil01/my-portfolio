@@ -47,8 +47,7 @@ const Homepage = () => {
         </div>
         <button className='homepage-button-hire'>Hire me</button>
       </div>
-      {isVisible ? <img className='homepage-image' src={Selfipic} alt="profile" /> : ""}
-      {isVisible ? "" : <div className='top-arrow' onClick={() => scrollToTop()}><MdKeyboardDoubleArrowUp/></div>}
+      {isVisible ? <img className='homepage-image' src={Selfipic} alt="profile" /> : <div className='top-arrow' onClick={() => scrollToTop()}><MdKeyboardDoubleArrowUp/></div>}
     </div>
   )
 }
