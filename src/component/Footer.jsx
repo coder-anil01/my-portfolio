@@ -5,6 +5,7 @@ import '../style/Footer.css'
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -13,11 +14,11 @@ const Footer = () => {
         <div className='footer-card'>
           <img className='footer-logo' src={Navlogo} alt="Profile-logo" />
           <div className='footer-icon'>
-            <div><FaGithub/></div>
-            <div><FaFacebook/></div>
-            <div><FaLinkedinIn/></div>
-            <div><FaInstagram/></div>
-            <div><FaTwitter/></div>
+            <Link to='https://github.com/coder-anil01' target='_blank' rel="noreferrer"><FaGithub/></Link>
+            <Link to='https://www.instagram.com/anil_kumar62034' target='_blank' rel="noreferrer"><FaInstagram/></Link>
+            <Link to=''><FaFacebook/></Link>
+            <Link to=''><FaLinkedinIn/></Link>
+            <Link to=''><FaTwitter/></Link>
           </div>
         </div>
         <div className='footer-card'>
@@ -34,11 +35,11 @@ const Footer = () => {
         </div>
       </div>
       <div className='footer-buttom'>
-        <div>privacy policy</div>
-        <div>| |</div>
-        <div>Maker:- CoderAnil</div>
-        <div>| |</div>
-        <div>2024</div>
+        <Link to='/privacyPolicy'>privacy policy</Link>
+        <Link to='/deliveryPolicy'>Delivery Policy</Link>
+        <Link to='/privacyPolicy'>Privacy Policy</Link>
+        <Link to='/refundPolicy'>Refund Policy</Link>
+        <Link to='/termsandConditions'>Terms and Conditions</Link>
       </div>
     </div>
   )

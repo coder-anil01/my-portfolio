@@ -6,13 +6,24 @@ import Dashbord from './admin/Dashbord';
 import BlogAdmin from './admin/BlogAdmin';
 import MessagesAdmin from './admin/MessagesAdmin';
 import ServicesAdmin from './admin/ServicesAdmin';
+import PrivacyPolicy from './pages/policy/PrivacyPolicy';
+import TermsandConditions from './pages/policy/TermsandConditions';
+import RefundPolicy from './pages/policy/RefundPolicy';
+import DeliveryPolicy from './pages/policy/DeliveryPolicy';
+import ScrollToTop from './component/ScrollToTop';
 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
         <Routes>
           <Route path="/" exact element={<Navbar/>}/>
+          <Route path="/privacyPolicy" exact element={<PrivacyPolicy/>}/>
+          <Route path="/termsandConditions" exact element={<TermsandConditions/>}/>
+          <Route path="/refundPolicy" exact element={<RefundPolicy/>}/>
+          <Route path="/deliveryPolicy" exact element={<DeliveryPolicy/>}/>
+
 {/* ADMIN */}
           <Route path="/admin" exact element={<Dashbord/>}>
             <Route path="" exact element={<MessagesAdmin/>}/>

@@ -39,9 +39,9 @@ const Homepage = () => {
         <div className='homepage-text-work'><Typing/></div>
         <div className='homepage-icons'>
           <a href='https://github.com/coder-anil01' target='_blank' rel="noreferrer" className='homepage-icon'><FaGithub/></a>
+          <a href='https://www.instagram.com/anil_kumar62034' className='homepage-icon'><FaInstagram/></a>
           <a href='' className='homepage-icon'><FaLinkedinIn/></a>
           <a href='' className='homepage-icon'><FaTwitter/></a>
-          <a href='' className='homepage-icon'><FaInstagram/></a>
           <a href='' className='homepage-icon'><FaFacebook/></a>
         </div>
         <button className='homepage-button-hire'>Hire me</button>

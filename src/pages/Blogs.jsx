@@ -26,12 +26,12 @@ const Blogs = () => {
     <div className='blog'>
       <div className='about-heading'>Latest Blogs Post</div>
       <div className='blog-container'>
-        {blog?.map((b) => (
+        {blog[0] ? blog?.map((b) => (
           <div key={b._id} className='blog-card'>
             <Link to={`/blog/${b._id}`}><img className='blog-card-image' src={Blogimage} alt="blog" /></Link>
             <div className='blog-card-title'>{b?.title.slice(0,20)}...</div>
           </div>
-        ))}
+        )) : <h2>Blog Not Found</h2>}
       </div>
     </div>
   )
