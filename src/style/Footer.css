@@ -17,6 +17,7 @@
 }
 .footer-icon{
     display: flex;
+    margin-top: 20px;
 }
 .footer-icon a{
     margin: 10px 10px;
@@ -27,18 +28,25 @@
 .footer-icon a:hover{
     color: rgb(205, 203, 203);
 }
-.footer-card{}
+.footer-card{
+    display: flex;
+    flex-direction: column;
+}
 .footer-m-title{
     font-size: 18px;
     width: 200px;
     padding-bottom: 5px;
     font-weight: 600;
 }
-.footer-card p{
+.footer-card p,
+.footer-card a{
+    margin-block: 10px;
+    color: white;
     cursor: pointer;
     transition: all 0.3s;
+    text-decoration: none;
 }
-.footer-card p:hover{
+.footer-card a:hover{
     color: #bbbbbb;
 }
 .footer-buttom{

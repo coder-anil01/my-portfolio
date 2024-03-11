@@ -29,15 +29,14 @@ const Footer = () => {
         </div>
         <div className='footer-card'>
           <div className='footer-m-title'>Contact Me</div>
-            <p><FaLocationDot/> India, Bihar, Vaishali</p>
-            <p><MdEmail/> anilkrmac83@gmail.com</p>
-            <p><FaPhoneAlt/> 6203493183</p>
+            <Link to=''><FaLocationDot/> India, Bihar, Vaishali</Link>
+            <Link to="mailto:anilkumar62034mack@gmail.com"><MdEmail/> anilkumar62034mack@gmail.com</Link>
+            <Link to="tel:+916203493183"><FaPhoneAlt/> +91 6203493183</Link>
         </div>
       </div>
       <div className='footer-buttom'>
         <Link to='/privacyPolicy'>privacy policy</Link>
         <Link to='/deliveryPolicy'>Delivery Policy</Link>
-        <Link to='/privacyPolicy'>Privacy Policy</Link>
         <Link to='/refundPolicy'>Refund Policy</Link>
         <Link to='/termsandConditions'>Terms and Conditions</Link>
       </div>

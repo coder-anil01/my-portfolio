@@ -37,6 +37,7 @@ const Homepage = () => {
         <div className='homepage-small-text'>HEY THERE !</div>
         <div className='homepage-name'>I Am Anil</div>
         <div className='homepage-text-work'><Typing/></div>
+        <div className='homepage-small-text'>Contact Me For Mern Stack web App Devlopment</div>
         <div className='homepage-icons'>
           <a href='https://github.com/coder-anil01' target='_blank' rel="noreferrer" className='homepage-icon'><FaGithub/></a>
           <a href='https://www.instagram.com/anil_kumar62034' className='homepage-icon'><FaInstagram/></a>
