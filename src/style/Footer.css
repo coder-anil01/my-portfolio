@@ -64,7 +64,8 @@
         display: flex;
         flex-direction: column;
     }
-    .footer-buttom div{
-        font-size: 12px;
+    .footer-buttom a{
+        padding-block: 8px;
+        font-size: 10px;
     }
 }
