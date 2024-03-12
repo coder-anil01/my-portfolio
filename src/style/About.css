@@ -83,3 +83,15 @@
         display: none;
     }
 }
+
+
+@media screen and (max-width: 500px) {
+    .about-me div{
+        grid-template-columns: 120px auto;
+        font-size: 13px;
+    }
+    .about-education p{
+        grid-template-columns: 80px 80px auto;
+        font-size: 13px;
+    }
+}

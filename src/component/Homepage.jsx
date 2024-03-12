@@ -33,6 +33,7 @@ const Homepage = () => {
 
   return (
     <div className='homepage'>
+    <div className="homepage-container">
       <div className='homepage-left'>
         <div className='homepage-small-text'>HEY THERE !</div>
         <div className='homepage-name'>I Am Anil</div>
@@ -48,6 +49,7 @@ const Homepage = () => {
         <button className='homepage-button-hire'>Hire me</button>
       </div>
       {isVisible ? <img className='homepage-image' src={Selfipic} alt="profile" /> : <div className='top-arrow' onClick={() => scrollToTop()}><MdKeyboardDoubleArrowUp/></div>}
+    </div>
     </div>
   )
 }
